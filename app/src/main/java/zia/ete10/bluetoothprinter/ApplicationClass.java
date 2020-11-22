@@ -4,7 +4,7 @@ import android.app.Application;
 
 import com.mazenrashed.printooth.Printooth;
 
-public class PrinttoothClass extends Application {
+public class ApplicationClass extends Application {
 
     @Override
     public void onCreate() {
