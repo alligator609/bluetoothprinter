@@ -107,20 +107,22 @@ public class MainActivity extends AppCompatActivity implements PrintingCallback 
         .setEmphasizedMode(DefaultPrinter.Companion.getUNDERLINED_MODE_ON())
         .setNewLinesAfter(1)
         .build());
-        printing.print(printables);
+        //printing.print(printables);
+        Printooth.INSTANCE.printer().print(printables);
 
     }
     private void printImage() {
         ArrayList<Printable> printables =new ArrayList<>();
 
         //Load image from internet
-        Picasso.get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/1200px-Android_robot.svg.png")
+        // remember size matter
+        Picasso.get().load("https://via.placeholder.com/120/09f/fff.png")
                 .into(new Target() {
                     @Override
                     public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
                         printables.add(new ImagePrintable.Builder(bitmap).build());
 
-                        printing.print(printables);
+                       Printooth.INSTANCE.printer().print(printables);
 
                     }
 
